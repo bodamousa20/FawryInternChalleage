@@ -44,6 +44,7 @@ public class ConsoleApp {
         System.out.println("2. add product to cart");
         System.out.println("3. view cart");
         System.out.println("4. checkout");
+        System.out.println("4. clean cart");
         System.out.println("Enter Choice");
        int choice = scanner.nextInt();
        switch (choice){
@@ -51,6 +52,7 @@ public class ConsoleApp {
            case 2 -> addToCart();
            case 3 -> viewCart();
            case 4 -> CheckoutServices.checkout(customer);
+           case 5 -> clearCart();
            default -> System.out.println("Invalid option");
        }
 
@@ -61,10 +63,11 @@ public class ConsoleApp {
     private static void viewCart() {
         if(customer.getCart().getCartItems().isEmpty()){
             System.out.println("Your Cart is Empty");
-        }
-        System.out.println("Your Cart");
-        for(CartItem cartItem : customer.getCart().getCartItems()){
-            System.out.println(cartItem.quantity + " "+ cartItem.product.getName());
+        }else {
+            System.out.println("Your Cart");
+            for (CartItem cartItem : customer.getCart().getCartItems()) {
+                System.out.println(cartItem.quantity + " " + cartItem.product.getName());
+            }
         }
     }
 
@@ -124,7 +127,7 @@ public class ConsoleApp {
 
     private static void addProduct() {
         try {
-            System.out.println("Enter Product Name please");
+            System.out.println("Enter Product Name");
             scanner.nextLine(); // consume leftover newline
             String name = scanner.nextLine();
             System.out.println("Enter Product price");
@@ -153,6 +156,10 @@ public class ConsoleApp {
             System.out.println(e.getMessage());
             scanner.nextLine();
         }
+    }
+    private static void clearCart(){
+        customer.getCart().getCartItems().clear();
+        System.out.println("Cart Cleaned Successfully");
     }
 
 }
