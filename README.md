@@ -31,9 +31,9 @@ Total Package Weight 24.8Kg
 4 banana 800.0
 3 meat 1350.0
 --------------------------------------
-Subtotal             2150
-Shipping             25
-Total             2175
+##Subtotal             2150
+##Shipping             25
+##Total             2175
 --------------------------------------
 Customer balance              2825
 ========================
