@@ -17,8 +17,8 @@ It allows basic e-commerce operations like:
   - Checks for expired items or low stock
 - Clear cart
 
-#OUTPUT Example
-** Shipment Notices **
+##OUTPUT Example
+** Shipment Notices 
 1x banana 3200g
 1x banana 3200g
 1x banana 3200g
@@ -27,7 +27,7 @@ It allows basic e-commerce operations like:
 1x meat 4000g
 1x meat 4000g
 Total Package Weight 24.8Kg
-** checkout Receipt **
+** checkout Receipt 
 4 banana 800.0
 3 meat 1350.0
 --------------------------------------
