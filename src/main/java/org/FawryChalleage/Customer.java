@@ -23,6 +23,8 @@ public class Customer {
     public double getBalance() {
         return balance;
     }
+
+    // calculate balance of user after successful checkout
     public void deduce(double totalPrice){
         balance -= totalPrice;
     }

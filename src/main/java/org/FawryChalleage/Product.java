@@ -55,7 +55,7 @@ public class Product implements  ShippableItem{
     }
 
 
-    public double getWeight() {
+    public double getItemWeight() {
         return weight;
     }
 

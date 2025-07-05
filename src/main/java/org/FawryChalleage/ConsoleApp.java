@@ -26,14 +26,9 @@ public class ConsoleApp {
            default -> System.out.println("Choose Correct Number");
 
        }
-
-
-
-
     }
-
-
     }
+        //customer cmd fun
 
     private static void customerMode() {
         System.out.println("--------------------------");
@@ -59,8 +54,8 @@ public class ConsoleApp {
 
 
     }
-
     private static void viewCart() {
+        //check first cart is not empty
         if(customer.getCart().getCartItems().isEmpty()){
             System.out.println("Your Cart is Empty");
         }else {
@@ -75,6 +70,7 @@ public class ConsoleApp {
         listProduct();
         System.out.println("Enter Product Number :");
         int index = scanner.nextInt()-1;
+        //check for product
         if(index < 0 || index >=products.size()){
             System.out.println("Invalid Product");
             return;
@@ -83,6 +79,7 @@ public class ConsoleApp {
         System.out.println("Enter Product quantity");
         long quantity = scanner.nextInt();
         try {
+            //call add product function
             customer.getCart().addProduct(selected,quantity);
             System.out.println("Added to Cart");
 

@@ -2,11 +2,10 @@ package org.FawryChalleage;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 public class CheckoutServices {
-    public static void checkout(Customer customer){
-       Cart custmerCart =  customer.getCart();
+    public static void checkout(Customer currentCustomer){
+       Cart custmerCart =  currentCustomer.getCart();
        if(custmerCart.isEmpty()){
            System.out.println("the Cart is Empty");
            return;
@@ -19,7 +18,7 @@ public class CheckoutServices {
            Product product = item.product;
            Long quantity = item.quantity;
            double productPrice = product.getPrice();
-           double productWeight = product.getWeight();
+           double productWeight = product.getItemWeight();
 
            if (product.getExpired()) {
                System.out.println("Error Product " + product.getName() + " is Expired ");
@@ -43,7 +42,7 @@ public class CheckoutServices {
        }
            double shippingFees = shippableItems.isEmpty() ? 0 : 25;
            double totalPrice = subTotal + shippingFees ;
-           if(customer.getBalance() <totalPrice){
+           if(currentCustomer.getBalance() <totalPrice){
                System.out.println("Error , Total Price exceed your Current Balance ");
                return;
            }
@@ -51,7 +50,7 @@ public class CheckoutServices {
            if(!shippableItems.isEmpty()){
                System.out.println("** Shipment Notices **");
                 for( ShippableItem item : shippableItems){
-                System.out.printf("1x %s %.0fg%n",item.getName(),item.getWeight()*1000);
+                System.out.printf("1x %s %.0fg%n",item.getName(),item.getItemWeight()*1000);
                 }
                 System.out.println("Total Package Weight "+totalWeight+"Kg");
 
@@ -66,17 +65,17 @@ public class CheckoutServices {
             p.decreaseQuantity(quantity);
 
         }
-        customer.deduce(totalPrice);
+        currentCustomer.deduce(totalPrice);
         System.out.println("--------------------------------------");
         System.out.printf("Subtotal             %.0f%n",subTotal);
         System.out.printf("Shipping             %.0f%n",shippingFees);
         System.out.printf("Total             %.0f%n",totalPrice);
         System.out.println("--------------------------------------");
-        System.out.printf("Customer balance              %.0f%n",customer.getBalance());
+        System.out.printf("Customer balance              %.0f%n",currentCustomer.getBalance());
 
 
         //remove cart items after checkout
-        customer.getCart().getCartItems().clear();
+        currentCustomer.getCart().getCartItems().clear();
 
 
 
