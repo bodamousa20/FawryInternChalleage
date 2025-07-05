@@ -1,4 +1,5 @@
 # Fawry E-Commerce Console App (Java)
+// Written by Abdelrahman Mahmoud as part of Fawry Internship Challenge.
 
 This is a simple Java console-based project I built for the Fawry Rise Full Stack Internship challenge.
 
