@@ -18,22 +18,22 @@ It allows basic e-commerce operations like:
 - Clear cart
 
 ##OUTPUT Example
-** Shipment Notices 
-1x banana 3200g
-1x banana 3200g
-1x banana 3200g
-1x banana 3200g
-1x meat 4000g
-1x meat 4000g
-1x meat 4000g
-Total Package Weight 24.8Kg
-** checkout Receipt 
-4 banana 800.0
-3 meat 1350.0
+- Shipment Notices 
+- 1x banana 3200g
+- 1x banana 3200g
+- 1x banana 3200g
+- 1x banana 3200g
+- 1x meat 4000g
+- 1x meat 4000g
+- 1x meat 4000g
+#Total Package Weight 24.8Kg
+##checkout Receipt 
+- 4 banana 800.0
+- 3 meat 1350.0
 --------------------------------------
-##Subtotal             2150
-##Shipping             25
-##Total             2175
+## Subtotal             2150
+## Shipping             25
+## Total             2175
 --------------------------------------
-Customer balance              2825
+##Customer balance              2825
 ========================
